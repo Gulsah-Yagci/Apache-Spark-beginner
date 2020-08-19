@@ -3,6 +3,13 @@
 # İçerik
 
 1. [Apache Spark](#1)
+2. [Spark vs MapReduce](#2)
+3. [Çalışma Modları](#3)
+4. [Spark Uygulaması Bileşenler](#4)
+5. [RDD Operasyonları Genel Bakış](#5)
+6. [SparkConf](#6)
+7. [SparkContext](#7)
+8. [Low Level API (RDD Based)](#8)
 
 
 <a id=1></a><br>
@@ -25,6 +32,7 @@ Bilgisayarların belleklerini kullanabildiği gibi, RAM'leri ve İşlemcilerini 
 
 Spark, Hadoop Map Reduce'un varisidir. Bazı problemlerini özellikle hız konusundakileri çözüm getirmiştir. Hadoop ile uyumlu ancak çalışması için şart değildir.
 
+<a id=2></a><br>
 ## Spark vs MapReduce
 
 * İkisi de Hadoop YARN üzerinde çalışabilir.
@@ -45,6 +53,7 @@ Spark, Hadoop Map Reduce'un varisidir. Bazı problemlerini özellikle hız konus
 
 * Spark'ta shuffle daha uygun maliyetli
 
+<a id=3></a><br>
 ## Çalışma Modları
 
 Cluster Mode: Spark Standalone Cluster
@@ -57,6 +66,7 @@ Kuberbetes
 
 Local Mode: Basit geliştirmeler
 
+<a id=4></a><br>
 ## Spark Uygulaması Bileşenler
 
 Çalışacak kod
@@ -73,7 +83,8 @@ Mevcut bir veriyi parçalayıp cluster üzerine dağıtarak
 
 numbers = sc.parallelize((1,2,3,4,5,6,7,8))
 
-## RDD Operasyonları
+<a id=5></a><br>
+## RDD Operasyonları Genel Bakış
 
 Transformation - RDD transformation yapan ve sonuç olarak Başka bir RDD verir.
 
@@ -103,9 +114,11 @@ saveAsTextFile()
 
 takeSample()
 
+<a id=6></a><br>
 ## SparkConf
 Uygulamanın çalışacağı ortam ile ilgili konfigürasyon bilgilerini tutan nesne.
 
+<a id=7></a><br>
 ## SparkContext - Kullanıcı ile etkileşim kapısı
 Oluşturulan kon nesnesi SparkContext içinde kullanırız.
 
@@ -117,6 +130,7 @@ Spark 2.0'dan önce Spark'a tek giriş noktasıydı.
 
 Spark 2.0'dan sonra SparkContext ve SqlContext, SparkSession da birleşti.
 
+<a id=8></a><br>
 ## Low Level API (RDD Based)
 Spark-1'de kullanılan en eski ve en düşük seviyeli API.
 
